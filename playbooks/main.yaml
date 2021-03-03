@@ -4,5 +4,3 @@
     - base
     - boto
     - aws-cli
-    - postgres
-    - airflow
