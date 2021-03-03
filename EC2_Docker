@@ -32,9 +32,13 @@ sudo apt-get install \
   curl \
   gnupg-agent \
   software-properties-common
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-apt-cache madison docker-ce
 sudo apt install docker.io
 sudo apt install docker-compose
+```
+
+# After running make local, run the following commands seperately
+```
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - #
+apt-cache madison docker-ce
 
 ```
