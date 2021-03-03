@@ -88,30 +88,36 @@ Following Ansible Syntax best practices with built in linter
 ```bash
 ansible-lint main.yml
 ```
-**Create an EC2 Instance
+## Create an AWS EC2 Ubuntu instance
 
-1. Login to AWS
-2. Go to EC2
-3. Click Launch Instance
-4. Configure your VM in the following steps
-   a. Step 1: Select Ubuntu Server 20.04 LTS (HVM), SSD Volume Type (64-bit x86)
-      An AMI is a template that contains the software configuration (operating system, application server, and applications) required to launch your instance. You can select an AMI provided by AWS, our user community, or the AWS Marketplace; or you can select one of your own AMIs.
+1. Login to AWS and Launch and instance in the EC2 section
+
+2. Configure your VM in the following steps
+   a. Step 1: Select **Ubuntu Server 20.04 LTS (HVM), SSD Volume Type (64-bit x86)**
+      An AMI is a template that contains the software configuration (operating system, application server,
+      and applications) required to launch your instance. You can select an AMI provided by AWS, our user community,
+      or the AWS Marketplace; or you can select one of your own AMIs.
    b. Step 2: Next
    c. Step 3: Next
    d. Step 4: Next
    e. Step 5: Next
-   f. Step 6: In the source column select the traffic that can reach your instance
+   f. Step 6: In the source column select the traffic that can reach your instance.
       (Rules with source of 0.0.0.0/0 allow all IP addresses to access your instance. We recommend setting security group rules to allow access from known IP addresses only)
    g. Step 7: Launch
-5. On this pop-up click the first drop down menu and select Create a new key pair and name your pair TEST.
+   
+3. On this pop-up click the first drop down menu and select **Create a new key pair** and name your pair.
    (You have to download the private key file (*.pem file) before you can continue. Store it in a secure and accessible location. You will not be able to download the file again after it's created.)
-6. On the next window select View Instances or you can go to the EC2 menu and click on the Instances option. There you can see the VM created.
-7. Create the name “EC2_Docker” for your instance by hovering over the empty area under the Name column and pressing on the symbol that appears.
+   
+4. On the next window select **View Instances** or you can go to the EC2 menu and click on the **Instances** option. There you can see the VM created.
 
-Connect to your Linux instance depending on your OS: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstances.html
+5. Create the name "EC2_Docker" for your instance by hovering over the empty area under the **Nam**e column and pressing on the symbol that appears.
 
-To install Docker in AWS EC2 Instance
-Run the following commands to install docker and docker compose:
+## Connect to your Linux instance depending on your OS:
+   https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstances.html
+
+## Install Docker + Docker Compose in an AWS EC2 Instance
+
+Run the following commands:
 
 ```
 
@@ -127,4 +133,9 @@ apt-cache madison docker-ce
 sudo apt install docker.io
 sudo apt install docker-compose
 
+```
+After running make local, run the following commands seperately
+```
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - #
+apt-cache madison docker-ce
 ```
