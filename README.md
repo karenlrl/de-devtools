@@ -93,17 +93,17 @@ ansible-lint main.yml
 1. Login to AWS and Launch and instance in the EC2 section
 
 2. Configure your VM in the following steps
-   a. Step 1: Select **Ubuntu Server 20.04 LTS (HVM), SSD Volume Type (64-bit x86)**
+    * Step 1: Select **Ubuntu Server 20.04 LTS (HVM), SSD Volume Type (64-bit x86)**
       An AMI is a template that contains the software configuration (operating system, application server,
       and applications) required to launch your instance. You can select an AMI provided by AWS, our user community,
       or the AWS Marketplace; or you can select one of your own AMIs.
-   b. Step 2: Next
-   c. Step 3: Next
-   d. Step 4: Next
-   e. Step 5: Next
-   f. Step 6: In the source column select the traffic that can reach your instance.
+    * Step 2: Next
+    * Step 3: Next
+    * Step 4: Next
+    * Step 5: Next
+    * Step 6: In the source column select the traffic that can reach your instance.
       (Rules with source of 0.0.0.0/0 allow all IP addresses to access your instance. We recommend setting security group rules to allow access from known IP addresses only)
-   g. Step 7: Launch
+    * Step 7: Launch
    
 3. On this pop-up click the first drop down menu and select **Create a new key pair** and name your pair.
    (You have to download the private key file (*.pem file) before you can continue. Store it in a secure and accessible location. You will not be able to download the file again after it's created.)
