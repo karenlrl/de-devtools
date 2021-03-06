@@ -1,0 +1,17 @@
+---
+- name: add airflow home env variable
+  lineinfile:
+    path: /etc/environment
+    line: 'AIRFLOW_HOME=~/airflow'
+
+- pip:
+    name: ['apache-airflow']
+    executable: pip3
+
+- name: change executor to local by default
+  lineinfile:
+    path: ~/airflow/airflow.cfg
+    regexp: 'executor = SequentialExecutor'
+    line: 'executor = LocalExecutor'
+    state: present
+

@@ -1,0 +1,6 @@
+---
+- hosts: localhost
+  roles:
+    - base
+    - boto
+    - aws-cli

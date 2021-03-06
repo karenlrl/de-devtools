@@ -1,0 +1,15 @@
+---
+# airflow database objects for meta data management
+- name: postgres db config to trust airflow
+  include: postgres-trust-airflow.yaml
+
+- name: start postgres as service
+  include: postgres-start-service.yaml
+
+# airflow install and config
+- name: install apache airflow
+  include: airflow-install.yaml
+
+- name: update metadata db config
+  include: airflow-metadata-db.yaml
+
