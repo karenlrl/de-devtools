@@ -5,4 +5,4 @@ container:
 	docker run -it de-devtools:latest bash
 
 local:
-	sudo ansible-playbook ../playbooks/main.yaml
+	sudo ansible-playbook ./playbooks/main.yaml
