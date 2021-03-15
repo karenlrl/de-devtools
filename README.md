@@ -139,3 +139,10 @@ After running make local, run the following commands seperately
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - #
 apt-cache madison docker-ce
 ```
+
+## Manage Docker as a non-root user by adding user to a group.
+# It may be necessary to restart the virtual machine for changes to take effect
+
+sudo groupadd docker
+sudo usermod -aG docker $ubuntu
+sudo usermod -aG docker ubuntu
