@@ -143,6 +143,8 @@ apt-cache madison docker-ce
 ## Manage Docker as a non-root user by adding user to a group.
 # It may be necessary to restart the virtual machine for changes to take effect
 
-sudo groupadd docker
-sudo usermod -aG docker $ubuntu
-sudo usermod -aG docker ubuntu
+```
+sudo groupadd docker #creates group docker
+sudo usermod -aG docker $USER #adds user to the docker group
+sudo usermod -aG docker ubuntu #since ubuntu is the user name of my EC2 instance, this adds user ubuntu to the docker group
+```
